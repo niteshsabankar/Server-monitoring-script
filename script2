@@ -134,15 +134,15 @@ ip addr show|grep "scope global eth"|tr -s ' ' > temp12.txt
 
 
                 if [ $ad -le 127 ];then
-                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: `hostname -i` (Class A)"
+                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: $ad (Class A)"
                 elif [ $ad -ge 128 -a $ad -le 191 ];then
-                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: `hostname -i` (Class B)"
+                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: $ad (Class B)"
                 elif [ $ad -ge 192 -a $ad -le 223 ];then
-                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: `hostname -i` (Class C)"
+                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: $ad (Class C)"
                 elif [ $ad -ge 224 -a $ad -le 239 ];then
-                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: `hostname -i` (Class D)"
+                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: $ad (Class D)"
                 elif [ $ad -ge 240 -a $ad -le 255 ];then
-                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: `hostname -i` (Class E)"
+                        echo -e "\t`echo $ab|awk -F ' ' '{printf "%-15s",$1}'`: $ad (Class E)"
                 else echo 'Invalid'
                 fi
                 done < temp12.txt
